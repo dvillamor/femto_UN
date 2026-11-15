@@ -1,6 +1,8 @@
 # Suite de verificación femto_UN  (RTL = commit f15fccd, el silicio fabricado)
 #   make unit | integration | functional | e2e | acceptance | all
 #   MEM_PROFILE=standard (memorias SPI estándar, por defecto) | silicon_aware (workaround)
+# Por defecto (y en CI / Tiny Tapeout) solo se corren las pruebas de aceptacion.
+.DEFAULT_GOAL := acceptance
 SRC      ?= $(abspath $(CURDIR)/../src)
 PROFILE  ?= $(or $(MEM_PROFILE),standard)
 export PATH := $(HOME)/opt/iverilog-12/bin:$(PATH)
