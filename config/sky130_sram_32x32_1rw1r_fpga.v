@@ -4,6 +4,9 @@
 // Solo para el flujo de la Colorlight i9 (make fpga-bit); en el ASIC se usa la macro
 // real (src/sky130_sram_32x32_1rw1r_bb.v + macros/).
 module sky130_sram_32x32_1rw1r (
+    // pines de alimentacion: la netlist de Tiny Tapeout los conecta; el RTL no (quedan sueltos)
+    inout  wire        vccd1,
+    inout  wire        vssd1,
     input  wire        clk0,
     input  wire        csb0,
     input  wire        web0,

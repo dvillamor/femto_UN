@@ -1,4 +1,8 @@
 # Plantilla común cocotb+Icarus. La invoca el Makefile raíz; no se usa directamente.
 SIM ?= icarus
 TOPLEVEL_LANG ?= verilog
+# cocotb 2.0 vuelve a invocar make sobre este archivo y, como VERILOG_SOURCES y
+# COMPILE_ARGS llegan por entorno, WAVES=1 los duplicaba (error "already declared").
+VERILOG_SOURCES := $(filter-out %/cocotb_iverilog_dump.v,$(VERILOG_SOURCES))
+COMPILE_ARGS    := $(subst -f $(SIM_BUILD)/cmds.f,,$(subst -s cocotb_iverilog_dump,,$(COMPILE_ARGS)))
 include $(shell cocotb-config --makefiles)/Makefile.sim

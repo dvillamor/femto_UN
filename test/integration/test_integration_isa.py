@@ -116,6 +116,13 @@ async def _lui(dut):
     await run_case(dut, p, h, regs=[5, 6, 7, 8])
 
 
+# ============================================================================ constantes y saltos
+@isa_test("test_isa_lui2", "LUI: carga inmediata superior (incl. 0 y bit 31).")
+async def _lui(dut):
+    p = new_prog(); p.emit(LUI(5, 0xABCDE), LUI(6, 0x80000), LUI(7, 0), LUI(8, 0xFFFFF)); h = halt_loop(p)
+    await run_case(dut, p, h, regs=[5, 6, 7, 8])
+
+
 @isa_test("test_isa_auipc", "AUIPC: PC + imm<<12 (truncado a 24 bits en el Quark).")
 async def _auipc(dut):
     p = new_prog(); p.emit(AUIPC(5, 0x00001), AUIPC(6, 0x000FF), AUIPC(7, 0), AUIPC(8, 0x0A5A5)); h = halt_loop(p)

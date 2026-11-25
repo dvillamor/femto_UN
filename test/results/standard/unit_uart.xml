@@ -1,22 +1,14 @@
 <testsuites name="results">
   <testsuite name="all" package="all">
-    <property name="random_seed" value="1795380930" />
-    <testcase name="test_reset_state" classname="test_unit_uart" file="/run/media/dvill/Datos/Documentos/un/maestria/1/digital/femto_UN/test/unit/test_unit_uart.py" lineno="96" time="0.0005507469177246094" sim_time_ns="180.0" ratio_time="326828.8831168831" />
-    <testcase name="test_register_map_and_led" classname="test_unit_uart" file="/run/media/dvill/Datos/Documentos/un/maestria/1/digital/femto_UN/test/unit/test_unit_uart.py" lineno="105" time="0.0007724761962890625" sim_time_ns="480.0" ratio_time="621378.3703703703" />
-    <testcase name="test_tx_frame_format" classname="test_unit_uart" file="/run/media/dvill/Datos/Documentos/un/maestria/1/digital/femto_UN/test/unit/test_unit_uart.py" lineno="118" time="0.06607651710510254" sim_time_ns="62780.0" ratio_time="950110.6104024969">
-      <failure error_type="AssertionError" error_msg="TX 0x55 -&gt; 0xb5&#10;assert 181 == 85" />
-    </testcase>
-    <testcase name="test_tx_baud_rate_vs_spec" classname="test_unit_uart" file="/run/media/dvill/Datos/Documentos/un/maestria/1/digital/femto_UN/test/unit/test_unit_uart.py" lineno="134" time="0.06589627265930176" sim_time_ns="62780.0" ratio_time="952709.4244705831">
-      <failure error_type="AssertionError" error_msg="ciclos/bit = 192.0 vs 217.0 ideal: baud real a 27 MHz = 130208 (-11.5 %). Correcto sólo a 22.12 MHz&#10;assert 11.526399999999999 &lt;= 3.0&#10; +  where 11.526399999999999 = abs(11.526399999999999)" />
-    </testcase>
-    <testcase name="test_tx_busy_and_ignored_write" classname="test_unit_uart" file="/run/media/dvill/Datos/Documentos/un/maestria/1/digital/femto_UN/test/unit/test_unit_uart.py" lineno="150" time="0.12446904182434082" sim_time_ns="122979.99999999999" ratio_time="988036.8499466536" />
-    <testcase name="test_rx_at_own_timebase" classname="test_unit_uart" file="/run/media/dvill/Datos/Documentos/un/maestria/1/digital/femto_UN/test/unit/test_unit_uart.py" lineno="173" time="0.050058603286743164" sim_time_ns="49840.0" ratio_time="995633.0526145332">
-      <failure error_type="AssertionError" error_msg="assert 39 == 167" />
-    </testcase>
-    <testcase name="test_rx_from_ideal_115200_sender" classname="test_unit_uart" file="/run/media/dvill/Datos/Documentos/un/maestria/1/digital/femto_UN/test/unit/test_unit_uart.py" lineno="188" time="0.27913999557495117" sim_time_ns="287960.00000000006" ratio_time="1031597.0644295602">
-      <failure error_type="AssertionError" error_msg="sólo 2/5 bytes recibidos correctamente a 115200 nominal (clk=27 MHz)&#10;assert 2 == 5&#10; +  where 5 = len((85, 167, 60, 255, 0))" />
-    </testcase>
-    <testcase name="test_rx_framing_error" classname="test_unit_uart" file="/run/media/dvill/Datos/Documentos/un/maestria/1/digital/femto_UN/test/unit/test_unit_uart.py" lineno="215" time="0.04945993423461914" sim_time_ns="49800.0" ratio_time="1006875.5806218366" />
-    <testcase name="test_rx_back_to_back_frames" classname="test_unit_uart" file="/run/media/dvill/Datos/Documentos/un/maestria/1/digital/femto_UN/test/unit/test_unit_uart.py" lineno="226" time="0.09281039237976074" sim_time_ns="93460.0" ratio_time="1006999.298285274" />
+    <property name="random_seed" value="1795613817" />
+    <testcase name="test_reset_state" classname="test_unit_uart" file="/run/media/dvill/Datos/Documentos/un/maestria/1/digital/femto_UN/test/unit/test_unit_uart.py" lineno="96" time="0.0005767345428466797" sim_time_ns="180.0" ratio_time="312101.99255890865" />
+    <testcase name="test_register_map_and_led" classname="test_unit_uart" file="/run/media/dvill/Datos/Documentos/un/maestria/1/digital/femto_UN/test/unit/test_unit_uart.py" lineno="105" time="0.0006730556488037109" sim_time_ns="480.0" ratio_time="713165.398512221" />
+    <testcase name="test_tx_frame_format" classname="test_unit_uart" file="/run/media/dvill/Datos/Documentos/un/maestria/1/digital/femto_UN/test/unit/test_unit_uart.py" lineno="118" time="0.3676786422729492" sim_time_ns="352760.0" ratio_time="959424.7787124" />
+    <testcase name="test_tx_baud_rate_vs_spec" classname="test_unit_uart" file="/run/media/dvill/Datos/Documentos/un/maestria/1/digital/femto_UN/test/unit/test_unit_uart.py" lineno="134" time="0.06623077392578125" sim_time_ns="62680.0" ratio_time="946387.8539338786" />
+    <testcase name="test_tx_busy_and_ignored_write" classname="test_unit_uart" file="/run/media/dvill/Datos/Documentos/un/maestria/1/digital/femto_UN/test/unit/test_unit_uart.py" lineno="150" time="0.12593412399291992" sim_time_ns="122979.99999999994" ratio_time="976542.3072059003" />
+    <testcase name="test_rx_at_own_timebase" classname="test_unit_uart" file="/run/media/dvill/Datos/Documentos/un/maestria/1/digital/femto_UN/test/unit/test_unit_uart.py" lineno="173" time="0.050141334533691406" sim_time_ns="50040.0" ratio_time="997979.0220058201" />
+    <testcase name="test_rx_from_ideal_115200_sender" classname="test_unit_uart" file="/run/media/dvill/Datos/Documentos/un/maestria/1/digital/femto_UN/test/unit/test_unit_uart.py" lineno="188" time="0.28428053855895996" sim_time_ns="287960.0" ratio_time="1012943.0648319843" />
+    <testcase name="test_rx_framing_error" classname="test_unit_uart" file="/run/media/dvill/Datos/Documentos/un/maestria/1/digital/femto_UN/test/unit/test_unit_uart.py" lineno="215" time="0.04916238784790039" sim_time_ns="49800.0" ratio_time="1012969.5114499375" />
+    <testcase name="test_rx_back_to_back_frames" classname="test_unit_uart" file="/run/media/dvill/Datos/Documentos/un/maestria/1/digital/femto_UN/test/unit/test_unit_uart.py" lineno="226" time="0.09319734573364258" sim_time_ns="93460.0" ratio_time="1002818.2590854904" />
   </testsuite>
 </testsuites>
