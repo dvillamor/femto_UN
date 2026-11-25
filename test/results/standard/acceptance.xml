@@ -1,0 +1,19 @@
+<testsuites name="results">
+  <testsuite name="all" package="all">
+    <property name="random_seed" value="1795613892" />
+    <testcase name="test_req01_boot_banner_within_budget" classname="test_acceptance" file="/run/media/dvill/Datos/Documentos/un/maestria/1/digital/femto_UN/test/acceptance/test_acceptance.py" lineno="34" time="0.8746001720428467" sim_time_ns="256840.0" ratio_time="293665.617970422" />
+    <testcase name="test_req02_isa_selftest_all_groups_pass" classname="test_acceptance" file="/run/media/dvill/Datos/Documentos/un/maestria/1/digital/femto_UN/test/acceptance/test_acceptance.py" lineno="43" time="9.805397033691406" sim_time_ns="2988860.0" ratio_time="304817.8456956162">
+      <failure error_type="AssertionError" error_msg="ISA PPPPPPPPFF: fallan SB/SH (RAM), LB/LH/LBU/LHU (RAM)&#10;assert not ['SB/SH (RAM)', 'LB/LH/LBU/LHU (RAM)']" />
+    </testcase>
+    <testcase name="test_req03_spiram_32bit_data_integrity" classname="test_acceptance" file="/run/media/dvill/Datos/Documentos/un/maestria/1/digital/femto_UN/test/acceptance/test_acceptance.py" lineno="54" time="2.536694049835205" sim_time_ns="824860.0" ratio_time="325171.2598346602" />
+    <testcase name="test_req04_cpu_throughput" classname="test_acceptance" file="/run/media/dvill/Datos/Documentos/un/maestria/1/digital/femto_UN/test/acceptance/test_acceptance.py" lineno="74" time="2.6421260833740234" sim_time_ns="780859.9999999995" ratio_time="295542.29259295337" />
+    <testcase name="test_req05a_uart_tx_baud_at_24mhz" classname="test_acceptance" file="/run/media/dvill/Datos/Documentos/un/maestria/1/digital/femto_UN/test/acceptance/test_acceptance.py" lineno="115" time="0.9905145168304443" sim_time_ns="284860.0" ratio_time="287587.91028275475">
+      <failure error_type="AssertionError" error_msg="baud=110599 (-3.99 %)&#10;assert 3.993855606758833 &lt;= 3.0&#10; +  where 3.993855606758833 = abs(-3.993855606758833)" />
+    </testcase>
+    <testcase name="test_req05b_uart_tx_baud_at_25mhz" classname="test_acceptance" file="/run/media/dvill/Datos/Documentos/un/maestria/1/digital/femto_UN/test/acceptance/test_acceptance.py" lineno="128" time="1.0014972686767578" sim_time_ns="284860.0" ratio_time="284434.1256929989" />
+    <testcase name="test_req06a_uart_rx_from_pc_24mhz_spaced" classname="test_acceptance" file="/run/media/dvill/Datos/Documentos/un/maestria/1/digital/femto_UN/test/acceptance/test_acceptance.py" lineno="162" time="4.071297883987427" sim_time_ns="1191500.0" ratio_time="292658.51675609784" />
+    <testcase name="test_req06b_uart_rx_back_to_back" classname="test_acceptance" file="/run/media/dvill/Datos/Documentos/un/maestria/1/digital/femto_UN/test/acceptance/test_acceptance.py" lineno="171" time="1.8970723152160645" sim_time_ns="548180.0" ratio_time="288961.0457140459" />
+    <testcase name="test_req07_power_up_robustness" classname="test_acceptance" file="/run/media/dvill/Datos/Documentos/un/maestria/1/digital/femto_UN/test/acceptance/test_acceptance.py" lineno="180" time="4.236215353012085" sim_time_ns="770580.0" ratio_time="181902.93358247072" />
+    <testcase name="test_req08_commercial_spi_memories" classname="test_acceptance" file="/run/media/dvill/Datos/Documentos/un/maestria/1/digital/femto_UN/test/acceptance/test_acceptance.py" lineno="189" time="0.866769552230835" sim_time_ns="256860.0" ratio_time="296341.7431298902" />
+  </testsuite>
+</testsuites>

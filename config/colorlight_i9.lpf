@@ -1,0 +1,51 @@
+# ---------------------------------------------------------------------------
+# femto_UN en la Colorlight i9 v7.2 (Lattice ECP5 LFE5U-45F-6BG381C)
+#   - Codigo: flash Winbond W25Q64 de la placa, por QSPI (pines de configuracion del ECP5)
+#   - Datos : SPI RAM EXTERNA en cabecera (pines abajo)
+# ---------------------------------------------------------------------------
+
+# Reloj de 25 MHz y reset ---------------------------------------------------
+LOCATE COMP "clk" SITE "P3";
+IOBUF PORT "clk" IO_TYPE=LVCMOS33;
+FREQUENCY PORT "clk" 25 MHZ;
+
+LOCATE COMP "rst_n" SITE "K18";
+IOBUF PORT "rst_n" PULLMODE=UP IO_TYPE=LVCMOS33;
+
+# Flash W25Q64 de la placa (U-flash).  SCK NO tiene pin de usuario: sale por la primitiva
+# USRMCLK (pin dedicado CCLK = U3), instanciada en config/top_fpga.v.
+LOCATE COMP "flash_cs_n"  SITE "R2";
+LOCATE COMP "flash_io[0]" SITE "W2";    # IO0 = MOSI / DI
+LOCATE COMP "flash_io[1]" SITE "V2";    # IO1 = MISO / DO
+LOCATE COMP "flash_io[2]" SITE "Y2";    # IO2 = WP#
+LOCATE COMP "flash_io[3]" SITE "W1";    # IO3 = HOLD#
+IOBUF PORT "flash_cs_n"  IO_TYPE=LVCMOS33 DRIVE=8;
+IOBUF PORT "flash_io[0]" IO_TYPE=LVCMOS33 DRIVE=8 SLEWRATE=FAST;
+IOBUF PORT "flash_io[1]" IO_TYPE=LVCMOS33 DRIVE=8 SLEWRATE=FAST;
+IOBUF PORT "flash_io[2]" IO_TYPE=LVCMOS33 PULLMODE=UP DRIVE=8 SLEWRATE=FAST;
+IOBUF PORT "flash_io[3]" IO_TYPE=LVCMOS33 PULLMODE=UP DRIVE=8 SLEWRATE=FAST;
+
+# SPI RAM externa (misma asignacion de pines que usaba el bus compartido) -----
+LOCATE COMP "ram_io[0]" SITE "D20";     # IO0 = MOSI / SI
+LOCATE COMP "ram_io[1]" SITE "B19";     # IO1 = MISO / SO
+LOCATE COMP "ram_io[2]" SITE "A19";     # IO2 = WP# / SIO2
+LOCATE COMP "ram_io[3]" SITE "A18";     # IO3 = HOLD# / SIO3
+IOBUF PORT "ram_io[0]" IO_TYPE=LVCMOS33 DRIVE=8 SLEWRATE=FAST;
+IOBUF PORT "ram_io[1]" IO_TYPE=LVCMOS33 DRIVE=8 SLEWRATE=FAST;
+IOBUF PORT "ram_io[2]" IO_TYPE=LVCMOS33 PULLMODE=UP DRIVE=8 SLEWRATE=FAST;
+IOBUF PORT "ram_io[3]" IO_TYPE=LVCMOS33 PULLMODE=UP DRIVE=8 SLEWRATE=FAST;
+
+LOCATE COMP "ram_sck"  SITE "C4";
+LOCATE COMP "ram_cs_n" SITE "A3";
+IOBUF PORT "ram_sck"  IO_TYPE=LVCMOS33 DRIVE=8 SLEWRATE=FAST;
+IOBUF PORT "ram_cs_n" IO_TYPE=LVCMOS33 DRIVE=8;
+
+# UART y LEDs ---------------------------------------------------------------
+LOCATE COMP "uart_tx" SITE "D2";
+LOCATE COMP "uart_rx" SITE "E2";
+IOBUF PORT "uart_tx" IO_TYPE=LVCMOS33;
+IOBUF PORT "uart_rx" PULLMODE=UP IO_TYPE=LVCMOS33;
+
+# LED de usuario de la placa en L2 (ver polaridad en config/top_fpga.v, define LED_ACTIVE_HIGH)
+LOCATE COMP "led" SITE "L2";
+IOBUF PORT "led" IO_TYPE=LVCMOS33 DRIVE=8;

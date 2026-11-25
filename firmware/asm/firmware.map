@@ -1,0 +1,46 @@
+
+Discarded input sections
+
+ .riscv.attributes
+                0x0000000000000000       0x1e uart_full_demo.o
+ .riscv.attributes
+                0x0000000000000000       0x1a putchar.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+BRAM             0x0000000000000000 0x0000000000004000 xrw
+*default*        0x0000000000000000 0xffffffffffffffff
+
+Linker script and memory map
+
+
+everything      0x0000000000000000       0xe1
+                0x0000000000000000                . = ALIGN (0x4)
+ *(.text)
+ .text          0x0000000000000000       0x80 uart_full_demo.o
+                0x0000000000000000                _start
+ .text          0x0000000000000080       0x4c putchar.o
+                0x0000000000000080                putchar
+ *(.rodata)
+ .rodata        0x00000000000000cc       0x15 uart_full_demo.o
+ *(.rodata.*)
+
+.data           0x00000000000000e1        0x0
+ .data          0x00000000000000e1        0x0 uart_full_demo.o
+ .data          0x00000000000000e1        0x0 putchar.o
+
+.bss            0x00000000000000e1        0x0
+ .bss           0x00000000000000e1        0x0 uart_full_demo.o
+ .bss           0x00000000000000e1        0x0 putchar.o
+
+/DISCARD/
+ *(.riscv.attributes)
+ *(.comment)
+ *(.symtab)
+ *(.strtab)
+ *(.shstrtab)
+ *(.eh_frame)
+LOAD uart_full_demo.o
+LOAD putchar.o
+OUTPUT(firmware.elf elf32-littleriscv)

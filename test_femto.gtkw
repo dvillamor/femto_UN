@@ -1,0 +1,57 @@
+[*]
+[*] GTKWave Analyzer v3.3.121 (w)1999-2024 BSI
+[*] Wed Sep 16 13:13:30 2026
+[*]
+[dumpfile] "/Work/VLSI/VLSI/femtoRV/femto_TB.vcd"
+[dumpfile_mtime] "Wed Sep 16 12:59:35 2026"
+[dumpfile_size] 32368022
+[savefile] "/Work/VLSI/VLSI/femtoRV/test_femto.gtkw"
+[timestart] 26503000
+[size] 1417 858
+[pos] -1 -259
+*-20.700001 31920000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] femto_TB.
+[treeopen] femto_TB.uut.
+[sst_width] 278
+[signals_width] 438
+[sst_expanded] 1
+[sst_vpaned_height] 349
+@28
+femto_TB.uut.clk
+femto_TB.uut.resetn
+@29
+[color] 2
+femto_TB.uut.spi_clk
+@28
+[color] 2
+femto_TB.uut.spi_cs_n
+[color] 2
+femto_TB.uut.spi_miso
+[color] 2
+femto_TB.uut.spi_mosi
+@22
+femto_TB.uut.CPU.PC[23:0]
+@28
+femto_TB.uut.TXD
+femto_TB.uut.RXD
+[color] 3
+femto_TB.uut.spi_clk_ram
+[color] 3
+femto_TB.uut.spi_cs_n_ram
+[color] 3
+femto_TB.uut.spi_miso_ram
+[color] 3
+femto_TB.uut.spi_mosi_ram
+[color] 3
+femto_TB.uut.spi_cs_n_ram
+@200
+-
+-MAPPED/FLASH
+@28
+femto_TB.uut.mapped_spi_flash.rstrb
+femto_TB.uut.mapped_spi_flash.rbusy
+@22
+femto_TB.uut.mapped_spi_flash.rdata[31:0]
+femto_TB.uut.mapped_spi_flash.word_address[19:0]
+[pattern_trace] 1
+[pattern_trace] 0
