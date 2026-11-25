@@ -27,11 +27,12 @@ class BusMonitor:
         while True:
             await FallingEdge(self.dut.clk)
             self.cycle += 1
+            if not geti(self.dut.rst_n, 0):
+                continue
             rs, wm = geti(d.mem_rstrb, 0), geti(d.mem_wmask, 0)
             if rs or wm:
                 self.events.append(dict(kind="W" if wm else "R", addr=geti(d.mem_address), cs=geti(d.cs),
-                                        wmask=wm, wdata=geti(d.mem_wdata), cyc=self.cycle,
-                                        state=geti(d.CPU.state)))
+                                        wmask=wm, cyc=self.cycle, state=geti(d.CPU.state)))
 
 
 def data_accesses(mon):

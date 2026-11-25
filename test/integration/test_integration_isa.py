@@ -41,6 +41,8 @@ class BusMonitor:
         while True:
             await FallingEdge(self.dut.clk)
             self.cycle += 1
+            if not geti(self.dut.rst_n, 0):
+                continue
             rs, wm = geti(d.mem_rstrb, 0), geti(d.mem_wmask, 0)
             if rs or wm:
                 self.events.append(dict(kind="W" if wm else "R", addr=geti(d.mem_address), cs=geti(d.cs),
@@ -116,11 +118,6 @@ async def _lui(dut):
     await run_case(dut, p, h, regs=[5, 6, 7, 8])
 
 
-# ============================================================================ constantes y saltos
-@isa_test("test_isa_lui2", "LUI: carga inmediata superior (incl. 0 y bit 31).")
-async def _lui(dut):
-    p = new_prog(); p.emit(LUI(5, 0xABCDE), LUI(6, 0x80000), LUI(7, 0), LUI(8, 0xFFFFF)); h = halt_loop(p)
-    await run_case(dut, p, h, regs=[5, 6, 7, 8])
 
 
 @isa_test("test_isa_auipc", "AUIPC: PC + imm<<12 (truncado a 24 bits en el Quark).")
