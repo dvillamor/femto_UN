@@ -105,4 +105,4 @@ fpga-flash: $(FPGA_DIR)/$(FPGA_TOP).bit
 	openFPGALoader -b $(FPGA_BOARD) -f $<
 
 fpga-clean:
-	rm -rf ./build
+	rm -rf ./build ./abc.history
